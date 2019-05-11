@@ -3,19 +3,16 @@ class EvolutionaryAlgorithm(object):
     def createInitialPopulation(self):
         raise NotImplementedError("Should have implemented this")
 
-    def evaluatePopulation(self):
+    def evaluatePopulation(self, population):
         raise NotImplementedError("Should have implemented this")
 
     def isStoppingConditionReached(self):
         raise NotImplementedError("Should have implemented this")
 
-    def selection(self):
+    def selection(self, population, fitness, offspring_population, fitness_offspring):
         raise NotImplementedError("Should have implemented this")
 
-    def reproduction(self):
-        raise NotImplementedError("Should have implemented this")
-
-    def replacement(self):
+    def reproduction(self, population):
         raise NotImplementedError("Should have implemented this")
 
     def initProgress(self):
@@ -29,8 +26,8 @@ class EvolutionaryAlgorithm(object):
         fitness = self.evaluatePopulation(population)
         self.initProgress()
         while not self.isStoppingConditionReached():
-            mating_population = self.selection(population, fitness);
-            offspring_population = self.reproduction(mating_population);
-            offspring_population, fitness_offspring = self.evaluatePopulation(offspring_population);
-            population = self.replacement(population, fitness, offspring_population, fitness_offspring);
+            offspring_population = self.reproduction(population)
+            fitness_offspring = self.evaluatePopulation(offspring_population)
+            population, fitness = self.selection(population, fitness, offspring_population, fitness_offspring)
             self.updateProgress()
+        return population, fitness
