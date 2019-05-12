@@ -1,6 +1,6 @@
 from algorithms.EvolutionaryAlgorithm import EvolutionaryAlgorithm
 import numpy as np
-from pyDOE import *
+import  pygmo as pg
 from core.geneticroutines.NsgaRoutines import *
 from core.operators.crossover.SBXCrossover import *
 from core.operators.mutation.PolynomialMutation import *
@@ -16,7 +16,6 @@ class NSGAII(EvolutionaryAlgorithm):
         self.mutation_operator = mutation_operator
         self.max_population_size = max_population_size
         self.t = 0
-
 
     def initProgress(self):
         self.t = 0
@@ -36,20 +35,22 @@ class NSGAII(EvolutionaryAlgorithm):
     def selection(self, PX, PY, QX, QY):
 
         RX, RY = np.append(PX, QX, axis=0), np.append(PY, QY, axis=0)
-        F = fnds(RX, RY)
+        F = fnds(RY, dominaC)
         SX, SY = np.empty((0, self.problem.n)), np.empty((0, self.problem.m))
 
         i = 0
-        while SX.shape[0] + len(F[i]) <= self.max_population_size:
+        l = len(F[i])
+        while SX.shape[0] + l <= self.max_population_size:
             SX, SY = np.append(SX, RX[F[i]], axis=0), np.append(SY, RY[F[i]], axis=0)
             i += 1
+            l = len(F[i])
         delta = self.max_population_size - SX.shape[0]
 
         if delta != 0:
             I = crowding_distance_assignment(RY[F[i]])
             f = np.array(F[i])
-            F[i] = f[I.argsort()].tolist()
-            F[i] = F[i][f.shape[0]-delta:]
+            F[i] = f[I.argsort()]
+            F[i] = F[i][l-delta:]
             SX, SY = np.append(SX, RX[F[i]], axis=0), np.append(SY, RY[F[i]], axis=0)
 
         return SX, SY
@@ -68,7 +69,7 @@ class NSGAII(EvolutionaryAlgorithm):
         return NX
 
 
-NSGAII(max_iterations=1).execute()
+NSGAII(max_iterations=1, max_population_size=100).execute()
 
 
 

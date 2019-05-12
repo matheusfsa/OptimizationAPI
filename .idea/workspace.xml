@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94e983ab-d2a0-4cf7-b752-c78399a1f312" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/algorithms/EvolutionaryAlgorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/EvolutionaryAlgorithm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algorithms/NSGAII.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms/NSGAII.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/geneticroutines/NsgaRoutines.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/geneticroutines/NsgaRoutines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/operators/mutation/PolynomialMutation.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/operators/mutation/PolynomialMutation.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +15,7 @@
     <session id="-1051460003">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="24" />
+          <entry key="project.closed" value="25" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="3" />
@@ -27,10 +25,10 @@
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="5" />
-          <entry key="project.open.time.7" value="4" />
+          <entry key="project.open.time.7" value="5" />
           <entry key="project.open.time.8" value="5" />
           <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="32" />
+          <entry key="project.opened" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -45,13 +43,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="4086" />
-          <entry key="py" value="14968" />
+          <entry key="Python Console" value="4341" />
+          <entry key="py" value="15581" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="19054" />
+          <entry key="Python" value="19922" />
         </counts>
       </usages-collector>
     </session>
@@ -61,12 +59,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/algorithms/NSGAII.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="59" selection-start-line="33" selection-start-column="59" selection-end-line="33" selection-end-column="59" />
+            <state relative-caret-position="162">
+              <caret line="34" column="40" lean-forward="true" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
               <folding>
                 <element signature="e#0#66#0" expanded="true" />
-                <marker date="1557617883453" expanded="true" signature="1130:1197" ph="..." />
-                <marker date="1557617883453" expanded="true" signature="1234:1243" ph="..." />
+                <marker date="1557637943066" expanded="true" signature="1129:1196" ph="..." />
+                <marker date="1557637943066" expanded="true" signature="1233:1242" ph="..." />
               </folding>
             </state>
           </provider>
@@ -75,10 +73,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/geneticroutines/NsgaRoutines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+            <state relative-caret-position="522">
+              <caret line="56" column="16" lean-forward="true" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
+                <marker date="1557630755431" expanded="true" signature="589:649" ph="..." />
+                <marker date="1557630755431" expanded="true" signature="2325:2330" ph="..." />
               </folding>
             </state>
           </provider>
@@ -87,7 +87,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/algorithms/EvolutionaryAlgorithm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
+            <state relative-caret-position="447">
               <caret line="38" column="60" selection-start-line="38" selection-start-column="60" selection-end-line="38" selection-end-column="60" />
               <folding>
                 <marker date="1557618006819" expanded="true" signature="48:49" ph="..." />
@@ -131,9 +131,9 @@
         <option value="$PROJECT_DIR$/algorithms/DVL.py" />
         <option value="$PROJECT_DIR$/core/operators/crossover/SBXCrossover.py" />
         <option value="$PROJECT_DIR$/core/operators/mutation/PolynomialMutation.py" />
-        <option value="$PROJECT_DIR$/algorithms/NSGAII.py" />
         <option value="$PROJECT_DIR$/algorithms/EvolutionaryAlgorithm.py" />
         <option value="$PROJECT_DIR$/core/geneticroutines/NsgaRoutines.py" />
+        <option value="$PROJECT_DIR$/algorithms/NSGAII.py" />
       </list>
     </option>
   </component>
@@ -143,7 +143,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="945" />
     <option name="y" value="54" />
     <option name="width" value="900" />
@@ -270,9 +270,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="945" y="54" width="900" height="1011" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1030" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16744731" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18783352" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -287,13 +287,13 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32998884" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.33599088" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.32887402" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" x="0" y="0" width="430" height="830" id="Documentation" order="5" side_tool="true" visible="true" weight="0.10421546" />
+      <window_info anchor="right" x="0" y="0" width="430" height="830" id="Documentation" order="5" side_tool="true" visible="true" weight="0.047491997" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,7 +365,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/algorithms/EvolutionaryAlgorithm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
+        <state relative-caret-position="447">
           <caret line="38" column="60" selection-start-line="38" selection-start-column="60" selection-end-line="38" selection-end-column="60" />
           <folding>
             <marker date="1557618006819" expanded="true" signature="48:49" ph="..." />
@@ -376,22 +376,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/geneticroutines/NsgaRoutines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+        <state relative-caret-position="522">
+          <caret line="56" column="16" lean-forward="true" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+            <marker date="1557630755431" expanded="true" signature="589:649" ph="..." />
+            <marker date="1557630755431" expanded="true" signature="2325:2330" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/algorithms/NSGAII.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="59" selection-start-line="33" selection-start-column="59" selection-end-line="33" selection-end-column="59" />
+        <state relative-caret-position="162">
+          <caret line="34" column="40" lean-forward="true" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
           <folding>
             <element signature="e#0#66#0" expanded="true" />
-            <marker date="1557617883453" expanded="true" signature="1130:1197" ph="..." />
-            <marker date="1557617883453" expanded="true" signature="1234:1243" ph="..." />
+            <marker date="1557637943066" expanded="true" signature="1129:1196" ph="..." />
+            <marker date="1557637943066" expanded="true" signature="1233:1242" ph="..." />
           </folding>
         </state>
       </provider>

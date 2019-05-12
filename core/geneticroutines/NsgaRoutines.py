@@ -1,6 +1,9 @@
 import numpy as np
 from time import *
-
+from ctypes import *
+import domModule
+import pygmo as pg
+from pyDOE import  *
 def domina(s1, s2):
     best_is_one = False
     best_is_two = False
@@ -20,36 +23,27 @@ def domina(s1, s2):
     return 0
 
 
-def fnds(X, Y):
-        inicio = time()
+def dominaC(s1, s2):
+    return domModule.dominance(s1.tolist(), s2.tolist())
+
+
+def fnds(Y,func):
         F = [[]]
-        S = [[] for _ in range(X.shape[0])]
-        n = np.zeros(X.shape[0])
-        #print('inicialização: ', time() - inicio)
-        #inicio = time()
-        #resto = 0
-        #dom_time = 0
-        for i in range(X.shape[0]-1):
-            for j in range(i+1, X.shape[0]):
+        S = [[] for _ in range(Y.shape[0])]
+        n = np.zeros(Y.shape[0])
+        for i in range(Y.shape[0]-1):
+            for j in range(i+1, Y.shape[0]):
                 if i != j:
-                    #inicio = time()
-                    dom = domina(Y[i], Y[j])
-                    #dom_time += time() - inicio
-                    inicio = time()
+                    dom = func(Y[i], Y[j])
                     if dom == 1:
                         S[i].append(j)
                         n[j] += 1
                     elif dom == -1:
                         n[i] += 1
                         S[j].append(i)
-                    #resto += time() - inicio
 
             if n[i] == 0:
                 F[0].append(i)
-        #print('dom_time: ', dom_time)
-        #print('resto:', resto)
-        #print('for: ', time() - inicio)
-        #inicio = time()
         i = 0
         while F[i]:
             Q = []
@@ -60,7 +54,6 @@ def fnds(X, Y):
                         Q.append(q)
             i += 1
             F.append(Q)
-        #print('while: ', time() - inicio)
         return F
 
 
@@ -93,3 +86,14 @@ def crowding_distance_assignment(Y):
         for i in range(1, l-2):
             I[i] = I[i] + (Ys[i+1, m] - Ys[i-1, m])/(Ys[l-1, m] - Ys[0, m])
     return I
+
+
+def calcula_tempo(func):
+    pop = lhs(3, 100)
+    ini = time()
+    f1 = fnds(pop,func)
+    print('meu fnds: ', time() - ini)
+    ini = time()
+    f2, _, _, _ = pg.fast_non_dominated_sorting(points=pop)
+    print('pygmo fnds: ', time() - ini)
+    return f1, f2
