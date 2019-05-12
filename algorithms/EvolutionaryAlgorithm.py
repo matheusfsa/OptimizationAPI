@@ -1,4 +1,6 @@
+import time
 class EvolutionaryAlgorithm(object):
+
 
     def createInitialPopulation(self):
         raise NotImplementedError("Should have implemented this")
@@ -21,7 +23,11 @@ class EvolutionaryAlgorithm(object):
     def updateProgress(self):
         raise NotImplementedError("Should have implemented this")
 
+    def getNonDominatedSolutions(self, population, fitness):
+        raise NotImplementedError("Should have implemented this")
+
     def execute(self):
+        inicio = time.time()
         population = self.createInitialPopulation()
         fitness = self.evaluatePopulation(population)
         self.initProgress()
@@ -30,4 +36,5 @@ class EvolutionaryAlgorithm(object):
             fitness_offspring = self.evaluatePopulation(offspring_population)
             population, fitness = self.selection(population, fitness, offspring_population, fitness_offspring)
             self.updateProgress()
-        return population, fitness
+        print('Execution time: ', (time.time() - inicio), 's')
+        return self.getNonDominatedSolutions(population, fitness)

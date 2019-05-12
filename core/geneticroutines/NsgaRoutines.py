@@ -1,37 +1,55 @@
 import numpy as np
-
+from time import *
 
 def domina(s1, s2):
-    k1 = 0
-    k2 = 0
+    best_is_one = False
+    best_is_two = False
     for i in range(s1.shape[0]):
         if s1[i] < s2[i]:
-            k1 += 1
+            best_is_one = True
+            if best_is_two:
+                return 0
         elif s2[i] < s1[i]:
-            k2 += 1
-    if k1 > 0 and k2 == 0:
+            best_is_two = True
+            if best_is_one:
+                return 0
+    if best_is_one and not best_is_two:
         return 1
-    if k2 > 0 and k1 == 0:
+    if best_is_two and not best_is_one:
         return -1
     return 0
 
 
 def fnds(X, Y):
-        I = crowding_distance_assignment(Y)
+        inicio = time()
         F = [[]]
         S = [[] for _ in range(X.shape[0])]
         n = np.zeros(X.shape[0])
-        for i in range(X.shape[0]):
-            for j in range(X.shape[0]):
+        #print('inicialização: ', time() - inicio)
+        #inicio = time()
+        #resto = 0
+        #dom_time = 0
+        for i in range(X.shape[0]-1):
+            for j in range(i+1, X.shape[0]):
                 if i != j:
+                    #inicio = time()
                     dom = domina(Y[i], Y[j])
+                    #dom_time += time() - inicio
+                    inicio = time()
                     if dom == 1:
                         S[i].append(j)
+                        n[j] += 1
                     elif dom == -1:
                         n[i] += 1
+                        S[j].append(i)
+                    #resto += time() - inicio
 
             if n[i] == 0:
                 F[0].append(i)
+        #print('dom_time: ', dom_time)
+        #print('resto:', resto)
+        #print('for: ', time() - inicio)
+        #inicio = time()
         i = 0
         while F[i]:
             Q = []
@@ -42,7 +60,25 @@ def fnds(X, Y):
                         Q.append(q)
             i += 1
             F.append(Q)
+        #print('while: ', time() - inicio)
         return F
+
+
+def getNonDominatedSolutions(X, Y):
+    F = []
+    n = np.zeros(X.shape[0])
+    for i in range(X.shape[0] - 1):
+        for j in range(i + 1, X.shape[0]):
+            if i != j:
+                dom = domina(Y[i], Y[j])
+                if dom == 1:
+                    n[j] += 1
+                elif dom == -1:
+                    n[i] += 1
+        if n[i] == 0:
+            F.append(i)
+
+    return X[F], Y[F]
 
 
 def crowding_distance_assignment(Y):
